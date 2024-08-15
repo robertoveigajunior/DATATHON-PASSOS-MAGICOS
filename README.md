@@ -24,7 +24,8 @@ O projeto visa desenvolver um modelo preditivo para avaliar o impacto da ONG "Pa
 1. Clone o repositório do projeto:
 bash
 git clone https://github.com/robertoveigajunior/DATATHON-PASSOS-MAGICOS.git
-cd seu-projeto
+
+cd DATATHON-PASSOS-MAGICOS
 
 
 2. Crie um ambiente virtual e ative-o:
