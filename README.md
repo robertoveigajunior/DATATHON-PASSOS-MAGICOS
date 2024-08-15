@@ -1,18 +1,3 @@
-# DATATHON-PASSOS-MAGICOS
-
-## Descrição do projeto
-
-O projeto DATATHON-PASSOS-MAGICOS é uma competição de ciência de dados que tem como objetivo resolver um problema específico utilizando técnicas de aprendizado de máquina. Nosso foco foi na utilização de.
-
-Nosso objetivo foi criar um modelo preditivo para identificar e prever o desenvolvimento educacional dos estudantes atendidos pela ONG, permitindo intervenções mais eficazes e personalizadas.
-
-Exploramos três modelos de Machine Learning: Regressão Linear, Árvore de Decisão e Rede Neural, para identificar o mais eficaz.
-
-Árvore de Decisão como algoritmo principal para abordar o problema proposto. No entanto, também é importante considerar ajustes nos hiperparâmetros da.
-
-Rede Neural ou explorar outras arquiteturas de modelos de aprendizado de máquina para potencialmente melhorar a performance do sistema. 
-
-
 # Projeto de Análise Preditiva da ONG "Passos Mágicos"
 
 ## Visão Geral
@@ -83,6 +68,35 @@ git push heroku main
 5. Acesse o aplicativo no navegador:
 bash
 heroku open
+
+## Conclusão
+
+# Regressão Linear:
+R²: 0.5846
+
+RMSE: 0.5262
+
+A Regressão Linear apresenta um R² de 0.5846, indicando que cerca de 58.46% da variabilidade dos dados é explicada pelo modelo. O RMSE de 0.5262 sugere um erro médio razoável nas previsões.
+
+# Árvore de Decisão:
+R²: 0.7618
+
+RMSE: 0.3985
+
+A Árvore de Decisão tem um R² de 0.7618, o que significa que ela explica 76.18% da variabilidade dos dados, superando a Regressão Linear. O RMSE de 0.3985 é o menor entre os modelos, indicando que a Árvore de Decisão tem o menor erro médio nas previsões.
+
+# Rede Neural:
+R²: -0.8513
+
+RMSE: 1.1108
+
+A Rede Neural apresenta um R² negativo (-0.8513), o que indica que o modelo não está capturando a variabilidade dos dados de forma eficaz e está performando pior do que um modelo que simplesmente prevê a média dos dados. O RMSE de 1.1108 é o maior, sugerindo um erro médio elevado nas previsões.
+
+# Conclusão:
+
+Árvore de Decisão é o modelo com melhor performance, apresentando o maior R² e o menor RMSE, o que indica que ele é mais eficaz em capturar a variabilidade dos dados e em fazer previsões precisas.
+Regressão Linear tem uma performance razoável, mas inferior à Árvore de Decisão.
+Rede Neural não está performando bem neste caso, possivelmente devido a um ajuste inadequado dos hiperparâmetros ou à necessidade de mais dados ou pré-processamento.
 
 
 ## Storytelling do Projeto
