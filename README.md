@@ -70,6 +70,11 @@ git push heroku main
 bash
 heroku open
 
+## Grafico
+
+![image](https://github.com/user-attachments/assets/1b8213e9-9bc2-4709-859a-a8223af284fb)
+
+
 ## Conclusão
 
 # Regressão Linear:
