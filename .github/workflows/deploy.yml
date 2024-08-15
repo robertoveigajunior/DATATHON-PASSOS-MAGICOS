@@ -34,5 +34,5 @@ jobs:
 
     - name: Deploy to Heroku
       run: |
-        heroku git:remote -a datathon
+        heroku git:remote -a app-datathon
         git push heroku main
