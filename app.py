@@ -24,12 +24,6 @@ st.write(df.describe(include='all'))
 
 df['INSTITUICAO_ENSINO_ALUNO_2020'].value_counts().plot(kind='bar')
 st.write("Gráfico de barras para variáveis categóricas:")
-st.write(df.info())
-
-# Análise Exploratória de Dados
-st.write("Análise Exploratória de Dados:")
-# Contagem de valores para variáveis categóricas
-st.write("Contagem de valores para variáveis categóricas:")
 st.write(df['INSTITUICAO_ENSINO_ALUNO_2020'].value_counts())
 
 # Histogramas para variáveis numéricas
