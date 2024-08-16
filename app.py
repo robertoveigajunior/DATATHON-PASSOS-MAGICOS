@@ -53,9 +53,9 @@ st.write(correlation_matrix)
 
 # Heatmap da matriz de correlação
 st.write("Heatmap da matriz de correlação:")
-fig, ax = plt.subplots()
-sns.heatmap(correlation_matrix, annot=True, ax=ax)
-st.pyplot(fig)
+# fig, ax = plt.subplots()
+# sns.heatmap(correlation_matrix, annot=True, ax=ax)
+# st.pyplot(fig)
 
 # Feature Engineering (Exemplo)
 # Criar variável combinada: Renda per capita familiar
