@@ -9,6 +9,17 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 df = pd.read_csv("PEDE_PASSOS_DATASET_FIAP.csv", sep=";")
+raw_gdp_df = pd.read_csv(df)
+
+MIN_YEAR = 2020
+MAX_YEAR = 2025
+
+gdp_df = raw_gdp_df.melt(
+        ['Country Code'],
+        [str(x) for x in range(MIN_YEAR, MAX_YEAR + 1)],
+        'Year',
+        'GDP',
+    )
 
 # Remover valores ausentes
 df = df.dropna()
