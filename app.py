@@ -11,10 +11,6 @@ import seaborn as sns
 # Carregar o DataFrame (substitua pelo seu método de carregamento de dados)
 df = pd.read_csv('PEDE_PASSOS_DATASET_FIAP.csv')
 
-# Exibir informações sobre o DataFrame
-st.write("Informações do DataFrame:")
-st.write(df.info())
-
 # Visualizar as primeiras linhas do DataFrame
 st.write("Primeiras linhas do DataFrame:")
 st.write(df.head())
@@ -25,9 +21,9 @@ st.write(df.describe(include='all'))
 
 # Histogramas para variáveis numéricas
 st.write("Histogramas para variáveis numéricas:")
-fig, ax = plt.subplots(figsize=(15, 10))
-df.hist(ax=ax)
-st.pyplot(fig)
+# fig, ax = plt.subplots(figsize=(15, 10))
+# df.hist(ax=ax)
+# st.pyplot(fig)
 
 # Boxplots para variáveis numéricas
 st.write("Boxplots para variáveis numéricas:")
