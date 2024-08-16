@@ -27,7 +27,7 @@ st.write("Informações sobre o DataFrame:")
 st.write(df.info())
 
 # Dividir o DataFrame em variáveis independentes (X) e dependente (y)
-X = df.drop(columns='IDADE_2020')
+X = df.drop(columns='INDE_2020')
 y = df['IDADE_2020']
 
 # Dividir o DataFrame em treino e teste
