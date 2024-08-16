@@ -26,6 +26,16 @@ O projeto visa desenvolver um modelo preditivo para avaliar o impacto da ONG "Pa
 MIN_YEAR = 2020
 MAX_YEAR = 2023
 
+# Criar um objeto progresso para selecionar o ano
+year = st.slider("Selecione o ano:", min_value=MIN_YEAR, max_value=MAX_YEAR, value=MIN_YEAR)
+
+# Filtrar o DataFrame com base no ano selecionado
+df_year = df[df['ANO'] == year]
+
+# Exibir as primeiras linhas do DataFrame filtrado
+st.write("Primeiras linhas do DataFrame filtrado:")
+st.write(df_year.head())
+
 # Remover valores ausentes
 df = df.dropna()
 
