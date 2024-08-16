@@ -9,17 +9,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 df = pd.read_csv("PEDE_PASSOS_DATASET_FIAP.csv", sep=";")
-raw_gdp_df = pd.read_csv(df)
-
-# MIN_YEAR = 2020
-# MAX_YEAR = 2025
-
-# gdp_df = raw_gdp_df.melt(
-#         ['Country Code'],
-#         [str(x) for x in range(MIN_YEAR, MAX_YEAR + 1)],
-#         'Year',
-#         'GDP',
-#     )
 
 # Remover valores ausentes
 df = df.dropna()
@@ -28,34 +17,6 @@ df = df.dropna()
 df = df.drop_duplicates()
 st.write("Primeiras linhas do DataFrame:")
 st.write(df.head())
-
-# # Add some spacing
-# ''
-# ''
-
-# min_value = gdp_df['Year'].min()
-# max_value = gdp_df['Year'].max()
-
-# from_year, to_year = st.slider(
-#     'Which years are you interested in?',
-#     min_value=min_value,
-#     max_value=max_value,
-#     value=[min_value, max_value])
-
-# countries = gdp_df['Country Code'].unique()
-
-# if not len(countries):
-#     st.warning("Select at least one country")
-
-# selected_countries = st.multiselect(
-#     'Which countries would you like to view?',
-#     countries,
-#     ['DEU', 'FRA', 'GBR', 'BRA', 'MEX', 'JPN'])
-
-# ''
-# ''
-# ''
-
 
 # Análise Descritiva
 st.write("Estatísticas descritivas:")
