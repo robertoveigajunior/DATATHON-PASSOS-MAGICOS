@@ -32,10 +32,6 @@ year = st.slider("Selecione o ano:", min_value=MIN_YEAR, max_value=MAX_YEAR, val
 # Filtrar o DataFrame com base no ano selecionado
 df_year = df[df['ANO'] == year]
 
-# Exibir as primeiras linhas do DataFrame filtrado
-st.write("Primeiras linhas do DataFrame filtrado:")
-st.write(df_year.head())
-
 # Remover valores ausentes
 df = df.dropna()
 
