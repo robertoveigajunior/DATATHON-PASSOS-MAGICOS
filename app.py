@@ -79,11 +79,11 @@ st.write(df.info())
 # st.write(f"MSE: {mse}")
 # st.write(f"R2: {r2}")
 
-# # Análise Exploratória de Dados
-# st.write("Análise Exploratória de Dados:")
-# # Contagem de valores para variáveis categóricas
-# st.write("Contagem de valores para variáveis categóricas:")
-# st.write(df['INSTITUICAO_ENSINO_ALUNO_2020'].value_counts())
+# Análise Exploratória de Dados
+st.write("Análise Exploratória de Dados:")
+# Contagem de valores para variáveis categóricas
+st.write("Contagem de valores para variáveis categóricas:")
+st.write(df['INSTITUICAO_ENSINO_ALUNO_2020'].value_counts())
 
 # Histogramas para variáveis numéricas
 st.write("Histogramas para variáveis numéricas:")
