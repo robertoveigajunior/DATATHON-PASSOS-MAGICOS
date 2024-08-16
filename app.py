@@ -18,10 +18,10 @@ st.set_page_config(
 # st.title('Projeto de Análise Preditiva da ONG "Passos Mágicos"')
 
 # Descrição do projeto
-st.write("""
+'''
+# :earth_americas: Projeto de Análise Preditiva da ONG "Passos Mágicos"
 O projeto visa desenvolver um modelo preditivo para avaliar o impacto da ONG "Passos Mágicos" no desenvolvimento educacional de crianças e jovens em situação de vulnerabilidade. Utilizando dados de 2020 a 2023, o objetivo é identificar estudantes em risco de dificuldades de aprendizado e otimizar a alocação de recursos da ONG. O projeto culmina em um dashboard interativo que permite à equipe da ONG visualizar insights e previsões em tempo real.
-""")
-
+'''
 # Remover valores ausentes
 df = df.dropna()
 
