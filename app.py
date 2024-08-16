@@ -39,11 +39,11 @@ st.write("Gráficos de barras para variáveis categóricas:")
 
 # Gráficos de dispersão
 st.write("Gráficos de dispersão:")
-fig, ax = plt.subplots()
-ax.scatter(df['IDADE_ALUNO_2020'], df['INDE_2020'])
-ax.set_xlabel('Idade do Aluno em 2020')
-ax.set_ylabel('IDADE 2020')
-st.pyplot(fig)
+# fig, ax = plt.subplots()
+# ax.scatter(df['IDADE_ALUNO_2020'], df['INDE_2020'])
+# ax.set_xlabel('Idade do Aluno em 2020')
+# ax.set_ylabel('IDADE 2020')
+# st.pyplot(fig)
 
 # Análise de Correlação
 st.write("Matriz de correlação:")
