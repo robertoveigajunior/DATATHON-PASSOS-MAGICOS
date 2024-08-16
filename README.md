@@ -58,7 +58,7 @@ heroku create datathon-passos-magicos
 
 3. Configure o Git para o Heroku:
 bash
-git remote add heroku https://git.heroku.com/datathon-passos-magicos.git
+git remote add heroku [https://git.heroku.com/datathon-passos-magicos.git](https://dashboard.heroku.com/apps/app-datathon-passos-magicos)
 
 
 4. Faça o deploy do aplicativo:
@@ -76,6 +76,8 @@ heroku open
 
 
 ## Conclusão
+
+Link do Dashboard (Sreamlit): https://datathon-paapps-magicos-gz9u7ueehqyzgneyyviwea.streamlit.app/
 
 # Regressão Linear:
 R²: 0.5846
