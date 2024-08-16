@@ -9,7 +9,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 df = pd.read_csv("PEDE_PASSOS_DATASET_FIAP.csv", sep=";")
-raw_gdp_df = pd.read_csv(df)
 
 # Título do aplicativo
 st.set_page_config(
@@ -26,23 +25,6 @@ O projeto visa desenvolver um modelo preditivo para avaliar o impacto da ONG "Pa
 
 MIN_YEAR = 2020
 MAX_YEAR = 2023
-gdp_df = raw_gdp_df.melt(
-        ['Country Code'],
-        [str(x) for x in range(MIN_YEAR, MAX_YEAR + 1)],
-        'Year',
-        'GDP',
-    )
-
-
-
-min_value = gdp_df['Year'].min()
-max_value = gdp_df['Year'].max()
-
-from_year, to_year = st.slider(
-    'Which years are you interested in?',
-    min_value=min_value,
-    max_value=max_value,
-    value=[min_value, max_value])
 
 # Remover valores ausentes
 df = df.dropna()
