@@ -22,64 +22,68 @@ st.write(df.head())
 st.write("Estatísticas descritivas:")
 st.write(df.describe(include='all'))
 
-# informações sobre o DataFrame
-st.write("Informações sobre o DataFrame:")
+df['INSTITUICAO_ENSINO_ALUNO_2020'].value_counts().plot(kind='bar')
+st.write("Gráfico de barras para variáveis categóricas:")
 st.write(df.info())
 
-# Dividir o DataFrame em variáveis independentes (X) e dependente (y)
-X = df.drop(columns='INDE_2020')
-y = df['IDADE_2020']
+# informações sobre o DataFrame
+# st.write("Informações sobre o DataFrame:")
+# st.write(df.info())
 
-# Dividir o DataFrame em treino e teste
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# # Dividir o DataFrame em variáveis independentes (X) e dependente (y)
+# X = df.drop(columns='INDE_2020')
+# y = df['IDADE_2020']
 
-# Treinar um modelo de Regressão Linear
-linear_model = LinearRegression()
-linear_model.fit(X_train, y_train)
+# # Dividir o DataFrame em treino e teste
+# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Fazer previsões
-y_pred = linear_model.predict(X_test)
+# # Treinar um modelo de Regressão Linear
+# linear_model = LinearRegression()
+# linear_model.fit(X_train, y_train)
 
-# Avaliar o modelo
-mse = mean_squared_error(y_test, y_pred)
-r2 = r2_score(y_test, y_pred)
-st.write("Métricas do modelo de Regressão Linear:")
-st.write(f"MSE: {mse}")
-st.write(f"R2: {r2}")
+# # Fazer previsões
+# y_pred = linear_model.predict(X_test)
 
-# Treinar um modelo de Árvore de Decisão
-tree_model = DecisionTreeRegressor()
-tree_model.fit(X_train, y_train)
+# # Avaliar o modelo
+# mse = mean_squared_error(y_test, y_pred)
+# r2 = r2_score(y_test, y_pred)
+# st.write("Métricas do modelo de Regressão Linear:")
+# st.write(f"MSE: {mse}")
+# st.write(f"R2: {r2}")
 
-# Fazer previsões
-y_pred = tree_model.predict(X_test)
+# # Treinar um modelo de Árvore de Decisão
+# tree_model = DecisionTreeRegressor()
+# tree_model.fit(X_train, y_train)
 
-# Avaliar o modelo
-mse = mean_squared_error(y_test, y_pred)
-r2 = r2_score(y_test, y_pred)
-st.write("Métricas do modelo de Árvore de Decisão:")
-st.write(f"MSE: {mse}")
-st.write(f"R2: {r2}")
+# # Fazer previsões
+# y_pred = tree_model.predict(X_test)
 
-# Treinar um modelo de Rede Neural
-nn_model = MLPRegressor()
-nn_model.fit(X_train, y_train)
+# # Avaliar o modelo
+# mse = mean_squared_error(y_test, y_pred)
+# r2 = r2_score(y_test, y_pred)
+# st.write("Métricas do modelo de Árvore de Decisão:")
+# st.write(f"MSE: {mse}")
+# st.write(f"R2: {r2}")
 
-# Fazer previsões
-y_pred = nn_model.predict(X_test)
+# # Treinar um modelo de Rede Neural
+# nn_model = MLPRegressor()
+# nn_model.fit(X_train, y_train)
 
-# Avaliar o modelo
-mse = mean_squared_error(y_test, y_pred)
-r2 = r2_score(y_test, y_pred)
-st.write("Métricas do modelo de Rede Neural:")
-st.write(f"MSE: {mse}")
-st.write(f"R2: {r2}")
+# # Fazer previsões
+# y_pred = nn_model.predict(X_test)
 
-# Análise Exploratória de Dados
-st.write("Análise Exploratória de Dados:")
-# Contagem de valores para variáveis categóricas
-st.write("Contagem de valores para variáveis categóricas:")
-st.write(df['INSTITUICAO_ENSINO_ALUNO_2020'].value_counts())
+# # Avaliar o modelo
+# mse = mean_squared_error(y_test, y_pred)
+# r2 = r2_score(y_test, y_pred)
+# st.write("Métricas do modelo de Rede Neural:")
+# st.write(f"MSE: {mse}")
+# st.write(f"R2: {r2}")
+
+# # Análise Exploratória de Dados
+# st.write("Análise Exploratória de Dados:")
+# # Contagem de valores para variáveis categóricas
+# st.write("Contagem de valores para variáveis categóricas:")
+# st.write(df['INSTITUICAO_ENSINO_ALUNO_2020'].value_counts())
 
 # Histogramas para variáveis numéricas
 st.write("Histogramas para variáveis numéricas:")
