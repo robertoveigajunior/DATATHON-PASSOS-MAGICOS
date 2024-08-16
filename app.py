@@ -78,8 +78,3 @@ st.write("Essa análise exploratória é apenas um ponto de partida e pode ser a
 # Construção de Modelos Preditivos
 st.write("Construção de Modelos Preditivos:")
 st.write("Nesta seção, iremos construir modelos preditivos para prever a variável alvo 'INDE_2020'.")
-st.write("Para isso, vamos dividir o conjunto de dados em features (X) e target (y), e em conjuntos de treino e teste.")
-
-# Dividir o conjunto de dados em features (X) e target (y)
-X = df.drop(columns=['INDE_2020'])
-y = df['INDE_2020']
