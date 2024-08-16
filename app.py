@@ -119,17 +119,12 @@ st.write(correlation_matrix)
 
 # Heatmap da matriz de correlação
 st.write("Heatmap da matriz de correlação:")
-# fig, ax = plt.subplots()
-# sns.heatmap(correlation_matrix, annot=True, ax=ax)
-# st.pyplot(fig)
-
-# Feature Engineering (Exemplo)
-# Criar variável combinada: Renda per capita familiar
-# (assumindo que exista uma coluna 'RENDA_FAMILIAR' e 'NUM_PESSOAS_RESIDENCIA')
-# df['RENDA_PER_CAPITA'] = df['RENDA_FAMILIAR'] / df['NUM_PESSOAS_RESIDENCIA']
+fig, ax = plt.subplots()
+sns.heatmap(correlation_matrix, annot=True, ax=ax)
+st.pyplot(fig)
 
 # Converter variáveis categóricas em dummies (exemplo)
-# df = pd.get_dummies(df, columns=['INSTITUICAO_ENSINO_ALUNO_2020'])
+df = pd.get_dummies(df, columns=['INSTITUICAO_ENSINO_ALUNO_2020'])
 
 # Imprimir as primeiras linhas do DataFrame modificado (após Feature Engineering)
 st.write("Primeiras linhas do DataFrame modificado:")
