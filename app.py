@@ -26,59 +26,6 @@ df['INSTITUICAO_ENSINO_ALUNO_2020'].value_counts().plot(kind='bar')
 st.write("Gráfico de barras para variáveis categóricas:")
 st.write(df.info())
 
-# informações sobre o DataFrame
-# st.write("Informações sobre o DataFrame:")
-# st.write(df.info())
-
-# # Dividir o DataFrame em variáveis independentes (X) e dependente (y)
-# X = df.drop(columns='INDE_2020')
-# y = df['IDADE_2020']
-
-# # Dividir o DataFrame em treino e teste
-# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# # Treinar um modelo de Regressão Linear
-# linear_model = LinearRegression()
-# linear_model.fit(X_train, y_train)
-
-# # Fazer previsões
-# y_pred = linear_model.predict(X_test)
-
-# # Avaliar o modelo
-# mse = mean_squared_error(y_test, y_pred)
-# r2 = r2_score(y_test, y_pred)
-# st.write("Métricas do modelo de Regressão Linear:")
-# st.write(f"MSE: {mse}")
-# st.write(f"R2: {r2}")
-
-# # Treinar um modelo de Árvore de Decisão
-# tree_model = DecisionTreeRegressor()
-# tree_model.fit(X_train, y_train)
-
-# # Fazer previsões
-# y_pred = tree_model.predict(X_test)
-
-# # Avaliar o modelo
-# mse = mean_squared_error(y_test, y_pred)
-# r2 = r2_score(y_test, y_pred)
-# st.write("Métricas do modelo de Árvore de Decisão:")
-# st.write(f"MSE: {mse}")
-# st.write(f"R2: {r2}")
-
-# # Treinar um modelo de Rede Neural
-# nn_model = MLPRegressor()
-# nn_model.fit(X_train, y_train)
-
-# # Fazer previsões
-# y_pred = nn_model.predict(X_test)
-
-# # Avaliar o modelo
-# mse = mean_squared_error(y_test, y_pred)
-# r2 = r2_score(y_test, y_pred)
-# st.write("Métricas do modelo de Rede Neural:")
-# st.write(f"MSE: {mse}")
-# st.write(f"R2: {r2}")
-
 # Análise Exploratória de Dados
 st.write("Análise Exploratória de Dados:")
 # Contagem de valores para variáveis categóricas
@@ -105,11 +52,11 @@ st.pyplot(fig)
 
 # Gráficos de dispersão
 st.write("Gráficos de dispersão:")
-# fig, ax = plt.subplots()
-# ax.scatter(df['IDADE_ALUNO_2020'], df['INDE_2020'])
-# ax.set_xlabel('Idade do Aluno em 2020')
-# ax.set_ylabel('IDADE 2020')
-# st.pyplot(fig)
+fig, ax = plt.subplots()
+ax.scatter(df['IDADE_ALUNO_2020'], df['INDE_2020'])
+ax.set_xlabel('Idade do Aluno em 2020')
+ax.set_ylabel('IDADE 2020')
+st.pyplot(fig)
 
 # Análise de Correlação
 st.write("Matriz de correlação:")
@@ -125,7 +72,3 @@ st.pyplot(fig)
 
 # Converter variáveis categóricas em dummies (exemplo)
 df = pd.get_dummies(df, columns=['INSTITUICAO_ENSINO_ALUNO_2020'])
-
-# Imprimir as primeiras linhas do DataFrame modificado (após Feature Engineering)
-st.write("Primeiras linhas do DataFrame modificado:")
-st.write(df.head())
