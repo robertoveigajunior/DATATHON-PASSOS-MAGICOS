@@ -66,3 +66,38 @@ st.pyplot(fig)
 
 # Converter variáveis categóricas em dummies (exemplo)
 df = pd.get_dummies(df, columns=['INSTITUICAO_ENSINO_ALUNO_2020'])
+
+# Conclusão da Análise Exploratória
+st.write("Conclusão da Análise Exploratória:")
+st.write("A análise exploratória é uma etapa fundamental em um projeto de ciência de dados. Ela permite entender melhor o conjunto de dados e identificar padrões e tendências que podem ser úteis para a construção de modelos preditivos.")
+st.write("Neste projeto, realizamos uma análise exploratória simples de um conjunto de dados de alunos. Foram apresentadas diversas visualizações, como histogramas, boxplots, gráficos de barras e gráficos de dispersão.")
+st.write("Também calculamos estatísticas descritivas e analisamos a matriz de correlação entre as variáveis numéricas.")
+st.write("Por fim, convertemos variáveis categóricas em dummies para facilitar a construção de modelos preditivos.")
+st.write("Essa análise exploratória é apenas um ponto de partida e pode ser aprofundada com a utilização de técnicas estatísticas mais avançadas e a construção de modelos preditivos.")
+
+# Construção de Modelos Preditivos
+st.write("Construção de Modelos Preditivos:")
+st.write("Nesta seção, iremos construir modelos preditivos para prever a variável alvo 'INDE_2020'.")
+st.write("Para isso, vamos dividir o conjunto de dados em features (X) e target (y), e em conjuntos de treino e teste.")
+
+# Dividir o conjunto de dados em features (X) e target (y)
+X = df.drop(columns=['INDE_2020'])
+y = df['INDE_2020']
+
+# Dividir o conjunto de dados em treino e teste
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Treinar um modelo de Regressão Linear
+st.write("Treinando um modelo de Regressão Linear...")
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Fazer previsões no conjunto de teste
+y_pred = model.predict(X_test)
+
+# Avaliar o modelo
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+st.write("Métricas do modelo de Regressão Linear:")
+st.write(f"MSE: {mse}")
+st.write(f"R2: {r2}")
