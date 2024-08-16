@@ -30,7 +30,7 @@ O projeto visa desenvolver um modelo preditivo para avaliar o impacto da ONG "Pa
 # year = st.slider("Selecione o ano:", min_value=MIN_YEAR, max_value=MAX_YEAR, value=MIN_YEAR)
 
 # Remover valores ausentes
-df = df.dropna()
+# df = df.dropna()
 
 # Remover duplicatas
 df = df.drop_duplicates()
