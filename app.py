@@ -33,9 +33,9 @@ st.pyplot(fig)
 
 # Gráficos de barras para variáveis categóricas
 st.write("Gráficos de barras para variáveis categóricas:")
-fig, ax = plt.subplots()
-df['INSTITUICAO_ENSINO_ALUNO_2020'].value_counts().plot(kind='bar', ax=ax)
-st.pyplot(fig)
+# fig, ax = plt.subplots()
+# df['INSTITUICAO_ENSINO_ALUNO_2020'].value_counts().plot(kind='bar', ax=ax)
+# st.pyplot(fig)
 
 # Gráficos de dispersão
 st.write("Gráficos de dispersão:")
