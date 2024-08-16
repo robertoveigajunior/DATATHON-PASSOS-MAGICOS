@@ -12,7 +12,7 @@ df = pd.read_csv("PEDE_PASSOS_DATASET_FIAP.csv", sep=";")
 
 # Título do aplicativo
 st.set_page_config(
-    page_title='Projeto de Análise Preditiva da ONG "Passos Mágicos',
+    page_title='Projeto de Análise Preditiva da ONG Passos Mágicos',
     page_icon=':earth_americas:', # This is an emoji shortcode. Could be a URL too.
 )
 # st.title('Projeto de Análise Preditiva da ONG "Passos Mágicos"')
