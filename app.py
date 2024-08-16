@@ -26,6 +26,8 @@ O projeto visa desenvolver um modelo preditivo para avaliar o impacto da ONG "Pa
 MIN_YEAR = 2020
 MAX_YEAR = 2023
 
+gdp_df['Year'] = gdp_df['Year'].astype(int)
+
 min_value = gdp_df['Year'].min()
 max_value = gdp_df['Year'].max()
 
