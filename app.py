@@ -32,10 +32,10 @@ O projeto visa desenvolver um modelo preditivo para avaliar o impacto da ONG "Pa
 # Remover valores ausentes
 # df = df.dropna()
 
-# Remover duplicatas
-df = df.drop_duplicates()
-st.write("Primeiras linhas do DataFrame:")
-st.write(df.head())
+# # Remover duplicatas
+# df = df.drop_duplicates()
+# st.write("Primeiras linhas do DataFrame:")
+# st.write(df.head())
 
 # Análise Descritiva
 st.write("Estatísticas descritivas:")
