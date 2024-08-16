@@ -72,8 +72,7 @@ heroku open
 
 ## Grafico
 
-![image](https://github.com/user-attachments/assets/1b8213e9-9bc2-4709-859a-a8223af284fb)
-
+![image](https://github.com/user-attachments/assets/436ce234-27fd-4833-821a-896f6ac9266e)
 
 ## Conclusão
 
