@@ -8,10 +8,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Carregar o DataFrame (substitua pelo seu método de carregamento de dados)
-df = pd.read_csv('PEDE_PASSOS_DATASET_FIAP.csv')
+df = pd.read_csv("PEDE_PASSOS_DATASET_FIAP.csv", sep=";")
 
-# Visualizar as primeiras linhas do DataFrame
+# Remover valores ausentes
+df = df.dropna()
+
+# Remover duplicatas
+df = df.drop_duplicates()
 st.write("Primeiras linhas do DataFrame:")
 st.write(df.head())
 
@@ -19,11 +22,70 @@ st.write(df.head())
 st.write("Estatísticas descritivas:")
 st.write(df.describe(include='all'))
 
+# informações sobre o DataFrame
+st.write("Informações sobre o DataFrame:")
+st.write(df.info())
+
+# Dividir o DataFrame em variáveis independentes (X) e dependente (y)
+X = df.drop(columns='IDADE_2020')
+y = df['IDADE_2020']
+
+# Dividir o DataFrame em treino e teste
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Treinar um modelo de Regressão Linear
+linear_model = LinearRegression()
+linear_model.fit(X_train, y_train)
+
+# Fazer previsões
+y_pred = linear_model.predict(X_test)
+
+# Avaliar o modelo
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+st.write("Métricas do modelo de Regressão Linear:")
+st.write(f"MSE: {mse}")
+st.write(f"R2: {r2}")
+
+# Treinar um modelo de Árvore de Decisão
+tree_model = DecisionTreeRegressor()
+tree_model.fit(X_train, y_train)
+
+# Fazer previsões
+y_pred = tree_model.predict(X_test)
+
+# Avaliar o modelo
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+st.write("Métricas do modelo de Árvore de Decisão:")
+st.write(f"MSE: {mse}")
+st.write(f"R2: {r2}")
+
+# Treinar um modelo de Rede Neural
+nn_model = MLPRegressor()
+nn_model.fit(X_train, y_train)
+
+# Fazer previsões
+y_pred = nn_model.predict(X_test)
+
+# Avaliar o modelo
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+st.write("Métricas do modelo de Rede Neural:")
+st.write(f"MSE: {mse}")
+st.write(f"R2: {r2}")
+
+# Análise Exploratória de Dados
+st.write("Análise Exploratória de Dados:")
+# Contagem de valores para variáveis categóricas
+st.write("Contagem de valores para variáveis categóricas:")
+st.write(df['INSTITUICAO_ENSINO_ALUNO_2020'].value_counts())
+
 # Histogramas para variáveis numéricas
 st.write("Histogramas para variáveis numéricas:")
-# fig, ax = plt.subplots(figsize=(15, 10))
-# df.hist(ax=ax)
-# st.pyplot(fig)
+fig, ax = plt.subplots(figsize=(15, 10))
+df.hist(ax=ax)
+st.pyplot(fig)
 
 # Boxplots para variáveis numéricas
 st.write("Boxplots para variáveis numéricas:")
@@ -33,9 +95,9 @@ st.pyplot(fig)
 
 # Gráficos de barras para variáveis categóricas
 st.write("Gráficos de barras para variáveis categóricas:")
-# fig, ax = plt.subplots()
-# df['INSTITUICAO_ENSINO_ALUNO_2020'].value_counts().plot(kind='bar', ax=ax)
-# st.pyplot(fig)
+fig, ax = plt.subplots()
+df['INSTITUICAO_ENSINO_ALUNO_2020'].value_counts().plot(kind='bar', ax=ax)
+st.pyplot(fig)
 
 # Gráficos de dispersão
 st.write("Gráficos de dispersão:")
