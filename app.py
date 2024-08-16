@@ -26,19 +26,19 @@ O projeto visa desenvolver um modelo preditivo para avaliar o impacto da ONG "Pa
 MIN_YEAR = 2020
 MAX_YEAR = 2023
 
-# Define gdp_df variable
-gdp_df = pd.DataFrame()  # Replace pd.DataFrame() with the actual data frame you want to use
+# # Define gdp_df variable
+# gdp_df = pd.DataFrame()  # Replace pd.DataFrame() with the actual data frame you want to use
 
-gdp_df['ANO'] = gdp_df['ANO'].astype(int)
+# gdp_df['ANO'] = gdp_df['ANO'].astype(int)
 
-min_value = gdp_df['ANO'].min()
-max_value = gdp_df['ANO'].max()
+# min_value = gdp_df['ANO'].min()
+# max_value = gdp_df['ANO'].max()
 
-from_year, to_year = st.slider(
-    'Selecione o ano de interesse:',
-    min_value=min_value,
-    max_value=max_value,
-    value=[min_value, max_value])
+# from_year, to_year = st.slider(
+#     'Selecione o ano de interesse:',
+#     min_value=min_value,
+#     max_value=max_value,
+#     value=[min_value, max_value])
 
 
 # Remover valores ausentes
