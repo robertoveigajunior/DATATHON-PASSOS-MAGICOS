@@ -40,6 +40,9 @@ MAX_YEAR = 2023
 #     max_value=max_value,
 #     value=[min_value, max_value])
 
+# criar um slider para selecionar o ano de interesse
+from_year = st.slider('Selecione o ano de interesse:', min_value=MIN_YEAR, max_value=MAX_YEAR, value=MIN_YEAR)
+to_year = st.slider('Selecione o ano de interesse:', min_value=MIN_YEAR, max_value=MAX_YEAR, value=MAX_YEAR)
 
 # Remover valores ausentes
 df = df.dropna()
