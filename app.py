@@ -23,6 +23,19 @@ st.set_page_config(
 O projeto visa desenvolver um modelo preditivo para avaliar o impacto da ONG "Passos Mágicos" no desenvolvimento educacional de crianças e jovens em situação de vulnerabilidade. Utilizando dados de 2020 a 2023, o objetivo é identificar estudantes em risco de dificuldades de aprendizado e otimizar a alocação de recursos da ONG. O projeto culmina em um dashboard interativo que permite à equipe da ONG visualizar insights e previsões em tempo real.
 '''
 
+MIN_YEAR = 2020
+MAX_YEAR = 2023
+
+min_value = gdp_df['Year'].min()
+max_value = gdp_df['Year'].max()
+
+from_year, to_year = st.slider(
+    'Selecione o ano de interesse:',
+    min_value=min_value,
+    max_value=max_value,
+    value=[min_value, max_value])
+
+
 # Remover valores ausentes
 df = df.dropna()
 
