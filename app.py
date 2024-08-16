@@ -83,21 +83,3 @@ st.write("Para isso, vamos dividir o conjunto de dados em features (X) e target 
 # Dividir o conjunto de dados em features (X) e target (y)
 X = df.drop(columns=['INDE_2020'])
 y = df['INDE_2020']
-
-# Dividir o conjunto de dados em treino e teste
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Treinar um modelo de Regressão Linear
-st.write("Treinando um modelo de Regressão Linear...")
-model = LinearRegression()
-model.fit(X_train, y_train)
-
-# Fazer previsões no conjunto de teste
-y_pred = model.predict(X_test)
-
-# Avaliar o modelo
-mse = mean_squared_error(y_test, y_pred)
-r2 = r2_score(y_test, y_pred)
-st.write("Métricas do modelo de Regressão Linear:")
-st.write(f"MSE: {mse}")
-st.write(f"R2: {r2}")
