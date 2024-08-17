@@ -121,8 +121,7 @@ elif from_year == 2022:
     ax.set_title('Relação entre INDE e IAA em 2022')
 
 # Configurar o título e os rótulos dos eixos
-ax.set_xlabel('INDE_2020')
-ax.set_ylabel('IAA_2020')
+ax.set_ylabel('Gráfico de disperção - Relação entre INDE e IAA')
 
 # Mostrar o gráfico no Streamlit
 st.pyplot(fig)
@@ -143,15 +142,7 @@ elif from_year == 2022:
     ax.set_title('Distribuição do INDE em 2022')
 
 # Configurar os rótulos dos eixos
-ax.set_xlabel('INDE')
-ax.set_ylabel('Frequência')
-
-# Mostrar o gráfico no Streamlit
-st.pyplot(fig)
-
-# Configurar o título e os rótulos dos eixos
-ax.set_xlabel('INDE_2020')
-ax.set_ylabel('Frequência')
+ax.set_ylabel('Distribuição do INDE')
 
 # Mostrar o gráfico no Streamlit
 st.pyplot(fig)
@@ -172,7 +163,6 @@ elif from_year == 2022:
 
 # Configurar o título e os rótulos dos eixos
 ax.set_xlabel('Instituição de Ensino')
-ax.set_ylabel('Número de Alunos')
 
 # Mostrar o gráfico no Streamlit
 st.pyplot(fig)
