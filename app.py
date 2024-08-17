@@ -116,7 +116,7 @@ if from_year == 2020:
 elif from_year == 2021:
     sns.scatterplot(x='INDE_2021', y='IAA_2021', data=df_2021, ax=ax)
     ax.set_title('Dispersão 2021')
-elif from_year == 2021:
+elif from_year == 2022:
     sns.scatterplot(x='INDE_2022', y='IAA_2022', data=df_2022, ax=ax)
     ax.set_title('Dispersão 2022')
 
