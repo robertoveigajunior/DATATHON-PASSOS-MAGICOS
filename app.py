@@ -160,10 +160,17 @@ st.pyplot(fig)
 fig, ax = plt.subplots(figsize=(10, 6))
 
 # Criar o gráfico de barras para a variável categórica
-df['INSTITUICAO_ENSINO_ALUNO_2020'].value_counts().plot(kind='bar', ax=ax)
+if from_year == 2020:
+    df['INSTITUICAO_ENSINO_ALUNO_2020'].value_counts().plot(kind='bar', ax=ax)
+    ax.set_title('Distribuição das Instituições de Ensino dos Alunos em 2020')
+elif from_year == 2021:
+    df['INSTITUICAO_ENSINO_ALUNO_2021'].value_counts().plot(kind='bar', ax=ax)
+    ax.set_title('Distribuição das Instituições de Ensino dos Alunos em 2021')
+elif from_year == 2022:
+    df['INSTITUICAO_ENSINO_ALUNO_2022'].value_counts().plot(kind='bar', ax=ax)
+    ax.set_title('Distribuição das Instituições de Ensino dos Alunos em 2022')
 
 # Configurar o título e os rótulos dos eixos
-ax.set_title('Distribuição das Instituições de Ensino dos Alunos em 2020')
 ax.set_xlabel('Instituição de Ensino')
 ax.set_ylabel('Número de Alunos')
 
@@ -178,8 +185,15 @@ st.pyplot(fig)
 # Modelo de classificação para o ano de 2020
 le = LabelEncoder()
 
-y = le.fit_transform(df_2020['INSTITUICAO_ENSINO_ALUNO_2020'])
-X = df_2020[colunas_numericas_2020]
+if from_year == 2020:
+    y = le.fit_transform(df_2020['INSTITUICAO_ENSINO_ALUNO_2020'])
+    X = df_2020[colunas_numericas_2020]
+elif from_year == 2021:
+    y = le.fit_transform(df_2021['INSTITUICAO_ENSINO_ALUNO_2021'])
+    X = df_2021[colunas_numericas_2021]
+elif from_year == 2022:
+    y = le.fit_transform(df_2022['ANO_INGRESSO_2022'])
+    X = df_2022[colunas_numericas_2022]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
@@ -190,44 +204,7 @@ y_pred = clf.predict(X_test)
 
 accuracy = accuracy_score(y_test, y_pred)
 
-st.markdown("## Resultados da Classificação para 2020")
-st.markdown(f"### Acurácia do Modelo: **{accuracy:.2%}**")
-st.markdown("---")
-
-# Modelo de classificação para o ano de 2021
-
-y = le.fit_transform(df_2021['INSTITUICAO_ENSINO_ALUNO_2021'])
-X = df_2021[colunas_numericas_2021]
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-
-clf = DecisionTreeClassifier(random_state=42)
-clf.fit(X_train, y_train)
-
-y_pred = clf.predict(X_test)
-
-accuracy = accuracy_score(y_test, y_pred)
-
-st.markdown("## Resultados da Classificação para 2021")
-st.markdown(f"### Acurácia do Modelo: **{accuracy:.2%}**")
-st.markdown("---")
-
-
-# Modelo de classificação para o ano de 2021
-
-y = le.fit_transform(df_2022['ANO_INGRESSO_2022'])
-X = df_2022[colunas_numericas_2022]
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-
-clf = DecisionTreeClassifier(random_state=42)
-clf.fit(X_train, y_train)
-
-y_pred = clf.predict(X_test)
-
-accuracy = accuracy_score(y_test, y_pred)
-
-st.markdown("## Resultados da Classificação para 2022")
+st.markdown("## Resultados da Classificação")
 st.markdown(f"### Acurácia do Modelo: **{accuracy:.2%}**")
 st.markdown("---")
 
