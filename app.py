@@ -125,8 +125,29 @@ st.pyplot(fig)
 # Criar a figura e os eixos
 fig, ax = plt.subplots(figsize=(8, 6))
 
-# Criar o histograma com a linha de densidade
-sns.histplot(df_2020['INDE_2020'], kde=True, ax=ax)
+# Seleção do ano
+from_year = st.selectbox("Selecione o ano:", [2020, 2021, 2022])
+
+# Criar a figura e os eixos
+fig, ax = plt.subplots(figsize=(8, 6))
+
+# Plotar o histograma com base no ano selecionado
+if from_year == 2020:
+    sns.histplot(df_2020['INDE_2020'], kde=True, ax=ax)
+    ax.set_title('Distribuição do INDE em 2020')
+elif from_year == 2021:
+    sns.histplot(df_2021['INDE_2021'], kde=True, ax=ax)
+    ax.set_title('Distribuição do INDE em 2021')
+elif from_year == 2022:
+    sns.histplot(df_2022['INDE_2022'], kde=True, ax=ax)
+    ax.set_title('Distribuição do INDE em 2022')
+
+# Configurar os rótulos dos eixos
+ax.set_xlabel('INDE')
+ax.set_ylabel('Frequência')
+
+# Mostrar o gráfico no Streamlit
+st.pyplot(fig)
 
 # Configurar o título e os rótulos dos eixos
 ax.set_title('Distribuição do INDE em 2020')
