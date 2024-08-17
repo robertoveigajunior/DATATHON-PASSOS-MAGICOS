@@ -305,8 +305,6 @@ st.markdown("---")
 
 """Rede Neural"""
 
-# Montar modelo de rede neural para o ano de 2020
-
 y = le.fit_transform(df_2020['INSTITUICAO_ENSINO_ALUNO_2020'])
 X = df_2020[colunas_numericas_2020]
 
@@ -324,8 +322,6 @@ st.write("R²:", r2_score(y_test, MLPRegressor_predictions))
 st.write("RMSE:", mean_squared_error(y_test, MLPRegressor_predictions, squared=False))
 st.markdown("---")
 
-# Montar modelo de rede neural para o ano de 2020
-
 y = le.fit_transform(df_2021['INSTITUICAO_ENSINO_ALUNO_2021'])
 X = df_2021[colunas_numericas_2021]
 
@@ -342,8 +338,6 @@ st.markdown("## Rede Neural 2021")
 st.write("R²:", r2_score(y_test, MLPRegressor_predictions))
 st.write("RMSE:", mean_squared_error(y_test, MLPRegressor_predictions, squared=False))
 st.markdown("---")
-
-# Montar modelo de rede neural para o ano de 2020
 
 y = le.fit_transform(df_2022['ANO_INGRESSO_2022'])
 X = df_2022[colunas_numericas_2022]
