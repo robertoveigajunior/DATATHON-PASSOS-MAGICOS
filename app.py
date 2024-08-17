@@ -112,16 +112,15 @@ fig, ax = plt.subplots(figsize=(8, 6))
 # Criar o gráfico de dispersão
 if from_year == 2020:
     sns.scatterplot(x='INDE_2020', y='IAA_2020', data=df_2020, ax=ax)
-    ax.set_title('Dispersão 2020')
+    ax.set_title('Relação entre INDE e IAA em 2020')
 elif from_year == 2021:
     sns.scatterplot(x='INDE_2021', y='IAA_2021', data=df_2021, ax=ax)
-    ax.set_title('Dispersão 2021')
+    ax.set_title('Relação entre INDE e IAA em 2021')
 elif from_year == 2022:
     sns.scatterplot(x='INDE_2022', y='IAA_2022', data=df_2022, ax=ax)
-    ax.set_title('Dispersão 2022')
+    ax.set_title('Relação entre INDE e IAA em 2022')
 
 # Configurar o título e os rótulos dos eixos
-ax.set_title('Relação entre INDE e IAA em 2020')
 ax.set_xlabel('INDE_2020')
 ax.set_ylabel('IAA_2020')
 
@@ -151,7 +150,6 @@ ax.set_ylabel('Frequência')
 st.pyplot(fig)
 
 # Configurar o título e os rótulos dos eixos
-ax.set_title('Distribuição do INDE em 2020')
 ax.set_xlabel('INDE_2020')
 ax.set_ylabel('Frequência')
 
