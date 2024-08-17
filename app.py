@@ -32,6 +32,12 @@ st.set_page_config(
 O projeto visa desenvolver um modelo preditivo para avaliar o impacto da ONG "Passos Mágicos" no desenvolvimento educacional de crianças e jovens em situação de vulnerabilidade. Utilizando dados de 2020 a 2023, o objetivo é identificar estudantes em risco de dificuldades de aprendizado e otimizar a alocação de recursos da ONG. O projeto culmina em um dashboard interativo que permite à equipe da ONG visualizar insights e previsões em tempo real.
 '''
 
+MIN_YEAR = 2020
+MAX_YEAR = 2023
+
+# Slider para selecionar o ano de interesse
+from_year = st.slider('Selecione o ano de interesse:', min_value=MIN_YEAR, max_value=MAX_YEAR, value=MIN_YEAR)
+
 df = pd.read_csv(r'./PEDE_PASSOS_DATASET_FIAP1.csv', sep=';')
 
 # st.write(df.head())
@@ -43,12 +49,6 @@ df.columns[df.columns.str.contains('2021')]
 df.columns[df.columns.str.contains('2022')]
 
 df[['NOME', 'INDE_2020', 'INDE_2021', 'INDE_2022']].dropna()
-
-MIN_YEAR = 2020
-MAX_YEAR = 2023
-
-# Slider para selecionar o ano de interesse
-from_year = st.slider('Selecione o ano de interesse:', min_value=MIN_YEAR, max_value=MAX_YEAR, value=MIN_YEAR)
 
 # FAZENDO O FILTRO PARA OBTER OS DADOS POR ANO E FAZENDO A LIMPEZA DOS DADOS
 
@@ -117,7 +117,7 @@ colunas_numericas_2022 = int_columns_2022
 numerical_df = df_2020.select_dtypes(include=['float', 'int'])
 
 correlation_matrix = numerical_df.corr()
-st.plot(sns.heatmap(correlation_matrix, annot=True, linewidth=.5))
+# st.plot(sns.heatmap(correlation_matrix, annot=True, linewidth=.5))
 
 # Modelo de classificação para o ano de 2020
 le = LabelEncoder()
