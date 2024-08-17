@@ -7,6 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1vpTQJhq70uQJgKHz4wC33myYEzWO1N6q
 """
 
+import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -19,9 +20,28 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.neural_network import MLPRegressor
 
+# Título do aplicativo
+st.set_page_config(
+    page_title='Projeto de Análise Preditiva da ONG Passos Mágicos',
+    page_icon=':earth_americas:', # This is an emoji shortcode. Could be a URL too.
+)
+# st.title('Projeto de Análise Preditiva da ONG "Passos Mágicos"')
+
+# Descrição do projeto
+'''
+# :earth_americas: Projeto de Análise Preditiva da ONG Passos Mágicos
+O projeto visa desenvolver um modelo preditivo para avaliar o impacto da ONG "Passos Mágicos" no desenvolvimento educacional de crianças e jovens em situação de vulnerabilidade. Utilizando dados de 2020 a 2023, o objetivo é identificar estudantes em risco de dificuldades de aprendizado e otimizar a alocação de recursos da ONG. O projeto culmina em um dashboard interativo que permite à equipe da ONG visualizar insights e previsões em tempo real.
+'''
+
+MIN_YEAR = 2020
+MAX_YEAR = 2023
+
+# Slider para selecionar o ano de interesse
+from_year = st.slider('Selecione o ano de interesse:', min_value=MIN_YEAR, max_value=MAX_YEAR, value=MIN_YEAR)
+
 df = pd.read_csv(r'./PEDE_PASSOS_DATASET_FIAP1.csv', sep=';')
 
-df.head()
+st.write(df.head())
 
 df.columns[df.columns.str.contains('2020')]
 
@@ -104,7 +124,7 @@ colunas_numericas_2022 = int_columns_2022
 numerical_df = df_2020.select_dtypes(include=['float', 'int'])
 
 correlation_matrix = numerical_df.corr()
-sns.heatmap(correlation_matrix, annot=True, linewidth=.5)
+st.plot(sns.heatmap(correlation_matrix, annot=True, linewidth=.5))
 
 # Modelo de classificação para o ano de 2020
 le = LabelEncoder()
@@ -121,8 +141,8 @@ y_pred = clf.predict(X_test)
 
 accuracy = accuracy_score(y_test, y_pred)
 
-print("----- Classificação 2020 -----")
-print(f"Acurácia do modelo: {accuracy:.2f}")
+st.write("----- Classificação 2020 -----")
+st.write(f"Acurácia do modelo: {accuracy:.2f}")
 
 # Modelo de classificação para o ano de 2021
 
@@ -138,8 +158,8 @@ y_pred = clf.predict(X_test)
 
 accuracy = accuracy_score(y_test, y_pred)
 
-print("----- Classificação 2021 -----")
-print(f"Acurácia do modelo: {accuracy:.2f}")
+st.write("----- Classificação 2021 -----")
+st.write(f"Acurácia do modelo: {accuracy:.2f}")
 
 # Modelo de classificação para o ano de 2021
 
@@ -155,8 +175,8 @@ y_pred = clf.predict(X_test)
 
 accuracy = accuracy_score(y_test, y_pred)
 
-print("----- Classificação 2022 -----")
-print(f"Acurácia do modelo: {accuracy:.2f}")
+st.write("----- Classificação 2022 -----")
+st.write(f"Acurácia do modelo: {accuracy:.2f}")
 
 """Regressão Linear"""
 
@@ -179,9 +199,9 @@ linear_predictions = linear_model.predict(X_test)
 # Avaliar o desempenho do modelo
 from sklearn.metrics import mean_squared_error, r2_score
 
-print("----- Regressão Linear 2020 -----")
-print("R²:", r2_score(y_test, linear_predictions))
-print("RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
+st.write("----- Regressão Linear 2020 -----")
+st.write("R²:", r2_score(y_test, linear_predictions))
+st.write("RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
 
 # Montar a regressao linear para o ano 2020
 from sklearn.linear_model import LinearRegression
@@ -201,10 +221,10 @@ linear_predictions = linear_model.predict(X_test)
 # Avaliar o desempenho do modelo
 from sklearn.metrics import mean_squared_error, r2_score
 
-print("----- Regressão Linear 2021 -----")
-print(f"Acurácia do modelo: {accuracy:.2f}")
-print("R²:", r2_score(y_test, linear_predictions))
-print("RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
+st.write("----- Regressão Linear 2021 -----")
+st.write(f"Acurácia do modelo: {accuracy:.2f}")
+st.write("R²:", r2_score(y_test, linear_predictions))
+st.write("RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
 
 # Montar a regressao linear para o ano 2020
 from sklearn.linear_model import LinearRegression
@@ -224,9 +244,9 @@ linear_predictions = linear_model.predict(X_test)
 # Avaliar o desempenho do modelo
 from sklearn.metrics import mean_squared_error, r2_score
 
-print("----- Regressão Linear 2022 -----")
-print("R²:", r2_score(y_test, linear_predictions))
-print("RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
+st.write("----- Regressão Linear 2022 -----")
+st.write("R²:", r2_score(y_test, linear_predictions))
+st.write("RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
 
 """Modelo de Arvore de decisão"""
 
@@ -246,9 +266,9 @@ tree_model.fit(X_train, y_train)
 tree_predictions = tree_model.predict(X_test)
 
 # Avaliar o desempenho do modelo
-print("----- Árvore de Decisão 2020 -----")
-print("R²:", r2_score(y_test, tree_predictions))
-print("RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
+st.write("----- Árvore de Decisão 2020 -----")
+st.write("R²:", r2_score(y_test, tree_predictions))
+st.write("RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
 
 # Montar modelo de arvore de decisão
 from sklearn.tree import DecisionTreeRegressor
@@ -266,9 +286,9 @@ tree_model.fit(X_train, y_train)
 tree_predictions = tree_model.predict(X_test)
 
 # Avaliar o desempenho do modelo
-print("----- Árvore de Decisão 2021 -----")
-print("R²:", r2_score(y_test, tree_predictions))
-print("RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
+st.write("----- Árvore de Decisão 2021 -----")
+st.write("R²:", r2_score(y_test, tree_predictions))
+st.write("RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
 
 # Montar modelo de arvore de decisão
 from sklearn.tree import DecisionTreeRegressor
@@ -286,9 +306,9 @@ tree_model.fit(X_train, y_train)
 tree_predictions = tree_model.predict(X_test)
 
 # Avaliar o desempenho do modelo
-print("----- Árvore de Decisão 2022 -----")
-print("R²:", r2_score(y_test, tree_predictions))
-print("RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
+st.write("----- Árvore de Decisão 2022 -----")
+st.write("R²:", r2_score(y_test, tree_predictions))
+st.write("RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
 
 """Rede Neural"""
 
@@ -307,9 +327,9 @@ regressor_model.fit(X_train, y_train)
 MLPRegressor_predictions = regressor_model.predict(X_test)
 
 # Avaliar o desempenho do modelo
-print("----- Rede Neural 2020 -----")
-print("R²:", r2_score(y_test, MLPRegressor_predictions))
-print("RMSE:", mean_squared_error(y_test, MLPRegressor_predictions, squared=False))
+st.write("----- Rede Neural 2020 -----")
+st.write("R²:", r2_score(y_test, MLPRegressor_predictions))
+st.write("RMSE:", mean_squared_error(y_test, MLPRegressor_predictions, squared=False))
 
 # Montar modelo de rede neural para o ano de 2020
 
@@ -326,9 +346,9 @@ regressor_model.fit(X_train, y_train)
 regressor_predictions = regressor_model.predict(X_test)
 
 # Avaliar o desempenho do modelo
-print("----- Rede Neural 2021 -----")
-print("R²:", r2_score(y_test, regressor_predictions))
-print("RMSE:", mean_squared_error(y_test, regressor_predictions, squared=False))
+st.write("----- Rede Neural 2021 -----")
+st.write("R²:", r2_score(y_test, regressor_predictions))
+st.write("RMSE:", mean_squared_error(y_test, regressor_predictions, squared=False))
 
 # Montar modelo de rede neural para o ano de 2020
 
@@ -345,9 +365,9 @@ regressor_model.fit(X_train, y_train)
 regressor_predictions = regressor_model.predict(X_test)
 
 # Avaliar o desempenho do modelo
-print("----- Rede Neural 2022 -----")
-print("R²:", r2_score(y_test, regressor_predictions))
-print("RMSE:", mean_squared_error(y_test, regressor_predictions, squared=False))
+st.write("----- Rede Neural 2022 -----")
+st.write("R²:", r2_score(y_test, regressor_predictions))
+st.write("RMSE:", mean_squared_error(y_test, regressor_predictions, squared=False))
 
 """Apuração dos modelos:"""
 
@@ -377,9 +397,9 @@ resultados = {
 
 # Encontra o melhor modelo de classificação
 melhor_classificacao = max(resultados['Classificação'].items(), key=lambda x: x[1]['acuracia'])
-print("\nMelhor modelo de classificação:")
-print(f"  Ano: {melhor_classificacao[0]}")
-print(f"  Acurácia: {melhor_classificacao[1]['acuracia']}")
+st.write("\nMelhor modelo de classificação:")
+st.write(f"  Ano: {melhor_classificacao[0]}")
+st.write(f"  Acurácia: {melhor_classificacao[1]['acuracia']}")
 
 # Encontra o melhor modelo de regressão para cada ano
 for ano in ['2020', '2021', '2022']:
@@ -387,10 +407,10 @@ for ano in ['2020', '2021', '2022']:
         [(modelo, metricas[ano]) for modelo, metricas in resultados.items() if modelo != 'Classificação'],
         key=lambda x: x[1]['R²']
     )
-    print(f"\nMelhor modelo de regressão para {ano}:")
-    print(f"  Modelo: {melhor_regressao[0]}")
-    print(f"  R²: {melhor_regressao[1]['R²']}")
-    print(f"  RMSE: {melhor_regressao[1]['RMSE']}")
+    st.write(f"\nMelhor modelo de regressão para {ano}:")
+    st.write(f"  Modelo: {melhor_regressao[0]}")
+    st.write(f"  R²: {melhor_regressao[1]['R²']}")
+    st.write(f"  RMSE: {melhor_regressao[1]['RMSE']}")
 
 """**Conclusão Classificação:**
 
