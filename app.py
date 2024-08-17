@@ -136,6 +136,20 @@ ax.set_ylabel('Frequência')
 # Mostrar o gráfico no Streamlit
 st.pyplot(fig)
 
+# Criar a figura e os eixos
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Criar o gráfico de barras para a variável categórica
+df['INSTITUICAO_ENSINO_ALUNO_2020'].value_counts().plot(kind='bar', ax=ax)
+
+# Configurar o título e os rótulos dos eixos
+ax.set_title('Distribuição das Instituições de Ensino dos Alunos em 2020')
+ax.set_xlabel('Instituição de Ensino')
+ax.set_ylabel('Número de Alunos')
+
+# Mostrar o gráfico no Streamlit
+st.pyplot(fig)
+
 # Boxplot para mostrar a distribuição de uma variável numérica em relação a uma variável categórica, por exemplo, 'INSTITUICAO_ENSINO_ALUNO_2020':
 fig, ax = plt.subplots()
 sns.heatmap(correlation_matrix, annot=True, linewidths=0.5, ax=ax)
