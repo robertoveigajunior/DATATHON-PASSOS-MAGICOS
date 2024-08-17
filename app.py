@@ -129,7 +129,6 @@ y_pred = clf.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 
 st.markdown("## Resultados da Classificação para 2020")
-st.markdown("---")
 st.markdown(f"### Acurácia do Modelo: **{accuracy:.2%}**")
 st.markdown("---")
 
@@ -148,7 +147,6 @@ y_pred = clf.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 
 st.markdown("## Resultados da Classificação para 2021")
-st.markdown("---")
 st.markdown(f"### Acurácia do Modelo: **{accuracy:.2%}**")
 st.markdown("---")
 
@@ -167,8 +165,9 @@ y_pred = clf.predict(X_test)
 
 accuracy = accuracy_score(y_test, y_pred)
 
-st.write("----- Classificação 2022 -----")
-st.write(f"Acurácia do modelo: {accuracy:.2f}")
+st.markdown("## Resultados da Classificação para 2022")
+st.markdown(f"### Acurácia do Modelo: **{accuracy:.2%}**")
+st.markdown("---")
 
 """Regressão Linear"""
 
@@ -191,9 +190,10 @@ linear_predictions = linear_model.predict(X_test)
 # Avaliar o desempenho do modelo
 from sklearn.metrics import mean_squared_error, r2_score
 
-st.write("----- Regressão Linear 2020 -----")
-st.write("R²:", r2_score(y_test, linear_predictions))
-st.write("RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
+st.markdown("## Regressão Linear 2020")
+st.markdown("### R²:", r2_score(y_test, linear_predictions))
+st.markdown("### RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
+st.markdown("---")
 
 # Montar a regressao linear para o ano 2020
 from sklearn.linear_model import LinearRegression
@@ -213,10 +213,10 @@ linear_predictions = linear_model.predict(X_test)
 # Avaliar o desempenho do modelo
 from sklearn.metrics import mean_squared_error, r2_score
 
-st.write("----- Regressão Linear 2021 -----")
-st.write(f"Acurácia do modelo: {accuracy:.2f}")
-st.write("R²:", r2_score(y_test, linear_predictions))
-st.write("RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
+st.markdown("## Regressão Linear 2021")
+st.markdown("### R²:", r2_score(y_test, linear_predictions))
+st.markdown("### RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
+st.markdown("---")
 
 # Montar a regressao linear para o ano 2020
 from sklearn.linear_model import LinearRegression
@@ -236,9 +236,10 @@ linear_predictions = linear_model.predict(X_test)
 # Avaliar o desempenho do modelo
 from sklearn.metrics import mean_squared_error, r2_score
 
-st.write("----- Regressão Linear 2022 -----")
-st.write("R²:", r2_score(y_test, linear_predictions))
-st.write("RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
+st.markdown("## Regressão Linear 2022")
+st.markdown("### R²:", r2_score(y_test, linear_predictions))
+st.markdown("### RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
+st.markdown("---")
 
 """Modelo de Arvore de decisão"""
 
@@ -257,10 +258,10 @@ tree_model.fit(X_train, y_train)
 # Fazer previsões no conjunto de teste
 tree_predictions = tree_model.predict(X_test)
 
-# Avaliar o desempenho do modelo
-st.write("----- Árvore de Decisão 2020 -----")
-st.write("R²:", r2_score(y_test, tree_predictions))
-st.write("RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
+st.markdown("## Árvore de Decisão 2020")
+st.markdown("### R²:", r2_score(y_test, tree_predictions))
+st.markdown("### RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
+st.markdown("---")
 
 # Montar modelo de arvore de decisão
 from sklearn.tree import DecisionTreeRegressor
@@ -277,10 +278,10 @@ tree_model.fit(X_train, y_train)
 # Fazer previsões no conjunto de teste
 tree_predictions = tree_model.predict(X_test)
 
-# Avaliar o desempenho do modelo
-st.write("----- Árvore de Decisão 2021 -----")
-st.write("R²:", r2_score(y_test, tree_predictions))
-st.write("RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
+st.markdown("## Árvore de Decisão 2021")
+st.markdown("### R²:", r2_score(y_test, tree_predictions))
+st.markdown("### RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
+st.markdown("---")
 
 # Montar modelo de arvore de decisão
 from sklearn.tree import DecisionTreeRegressor
@@ -297,10 +298,10 @@ tree_model.fit(X_train, y_train)
 # Fazer previsões no conjunto de teste
 tree_predictions = tree_model.predict(X_test)
 
-# Avaliar o desempenho do modelo
-st.write("----- Árvore de Decisão 2022 -----")
-st.write("R²:", r2_score(y_test, tree_predictions))
-st.write("RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
+st.markdown("## Árvore de Decisão 2022")
+st.markdown("### R²:", r2_score(y_test, tree_predictions))
+st.markdown("### RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
+st.markdown("---")
 
 """Rede Neural"""
 
@@ -318,10 +319,10 @@ regressor_model.fit(X_train, y_train)
 # Fazer previsões no conjunto de teste
 MLPRegressor_predictions = regressor_model.predict(X_test)
 
-# Avaliar o desempenho do modelo
-st.write("----- Rede Neural 2020 -----")
-st.write("R²:", r2_score(y_test, MLPRegressor_predictions))
-st.write("RMSE:", mean_squared_error(y_test, MLPRegressor_predictions, squared=False))
+st.markdown("## Rede Neural 2020")
+st.markdown("### R²:", r2_score(y_test, MLPRegressor_predictions))
+st.markdown("### RMSE:", mean_squared_error(y_test, MLPRegressor_predictions, squared=False))
+st.markdown("---")
 
 # Montar modelo de rede neural para o ano de 2020
 
@@ -337,10 +338,10 @@ regressor_model.fit(X_train, y_train)
 # Fazer previsões no conjunto de teste
 regressor_predictions = regressor_model.predict(X_test)
 
-# Avaliar o desempenho do modelo
-st.write("----- Rede Neural 2021 -----")
-st.write("R²:", r2_score(y_test, regressor_predictions))
-st.write("RMSE:", mean_squared_error(y_test, regressor_predictions, squared=False))
+st.markdown("## Rede Neural 2021")
+st.markdown("### R²:", r2_score(y_test, MLPRegressor_predictions))
+st.markdown("### RMSE:", mean_squared_error(y_test, MLPRegressor_predictions, squared=False))
+st.markdown("---")
 
 # Montar modelo de rede neural para o ano de 2020
 
@@ -356,14 +357,17 @@ regressor_model.fit(X_train, y_train)
 # Fazer previsões no conjunto de teste
 regressor_predictions = regressor_model.predict(X_test)
 
-# Avaliar o desempenho do modelo
-st.write("----- Rede Neural 2022 -----")
-st.write("R²:", r2_score(y_test, regressor_predictions))
-st.write("RMSE:", mean_squared_error(y_test, regressor_predictions, squared=False))
+st.markdown("## Rede Neural 2022")
+st.markdown("### R²:", r2_score(y_test, regressor_predictions))
+st.markdown("### RMSE:", mean_squared_error(y_test, regressor_predictions, squared=False))
+st.markdown("---")
 
-"""Apuração dos modelos:"""
 
-# Sumariza os resultados dos modelos
+# Título da seção
+st.markdown("## Apuração dos Modelos")
+st.markdown("---")
+
+# Dados dos resultados dos modelos
 resultados = {
     'Classificação': {
         '2020': {'acuracia': 0.84},
@@ -387,22 +391,27 @@ resultados = {
     }
 }
 
-# Encontra o melhor modelo de classificação
+# Melhor modelo de classificação
 melhor_classificacao = max(resultados['Classificação'].items(), key=lambda x: x[1]['acuracia'])
-st.write("\nMelhor modelo de classificação:")
-st.write(f"  Ano: {melhor_classificacao[0]}")
-st.write(f"  Acurácia: {melhor_classificacao[1]['acuracia']}")
+st.markdown("### Melhor Modelo de Classificação")
+st.markdown(f"- **Ano:** {melhor_classificacao[0]}")
+st.markdown(f"- **Acurácia:** {melhor_classificacao[1]['acuracia']:.2%}")
+st.markdown("A acurácia representa a proporção de previsões corretas feitas pelo modelo.")
 
-# Encontra o melhor modelo de regressão para cada ano
+# Melhor modelo de regressão para cada ano
+st.markdown("### Melhor Modelo de Regressão por Ano")
 for ano in ['2020', '2021', '2022']:
     melhor_regressao = max(
         [(modelo, metricas[ano]) for modelo, metricas in resultados.items() if modelo != 'Classificação'],
         key=lambda x: x[1]['R²']
     )
-    st.write(f"\nMelhor modelo de regressão para {ano}:")
-    st.write(f"  Modelo: {melhor_regressao[0]}")
-    st.write(f"  R²: {melhor_regressao[1]['R²']}")
-    st.write(f"  RMSE: {melhor_regressao[1]['RMSE']}")
+    st.markdown(f"#### Ano {ano}")
+    st.markdown(f"- **Modelo:** {melhor_regressao[0]}")
+    st.markdown(f"- **R²:** {melhor_regressao[1]['R²']:.3f}")
+    st.markdown(f"- **RMSE:** {melhor_regressao[1]['RMSE']:.3f}")
+    st.markdown("O R² indica a proporção da variabilidade dos dados explicada pelo modelo, enquanto o RMSE mede o erro médio das previsões.")
+
+st.markdown("---")
 
 """**Conclusão Classificação:**
 
