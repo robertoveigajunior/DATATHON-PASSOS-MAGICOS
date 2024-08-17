@@ -23,9 +23,10 @@ O projeto visa desenvolver um modelo preditivo para avaliar o impacto da ONG "Pa
 '''
 
 MIN_YEAR = 2020
-MAX_YEAR = 2023
+MAX_YEAR = 2022
 
 # Slider para selecionar o ano de interesse
+# Seleção do ano de interesse
 from_year = st.slider('Selecione o ano de interesse:', min_value=MIN_YEAR, max_value=MAX_YEAR, value=MIN_YEAR)
 
 df = pd.read_csv(r'./PEDE_PASSOS_DATASET_FIAP1.csv', sep=';')
@@ -122,12 +123,6 @@ ax.set_ylabel('IAA_2020')
 st.pyplot(fig)
 
 # Histograma para mostrar a distribuição de uma variável numérica, por exemplo, 'INDE_2020':
-# Criar a figura e os eixos
-fig, ax = plt.subplots(figsize=(8, 6))
-
-# Seleção do ano
-from_year = st.selectbox("Selecione o ano:", [2020, 2021, 2022])
-
 # Criar a figura e os eixos
 fig, ax = plt.subplots(figsize=(8, 6))
 
