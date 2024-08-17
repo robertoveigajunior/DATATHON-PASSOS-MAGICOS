@@ -34,9 +34,7 @@ df = pd.read_csv(r'./PEDE_PASSOS_DATASET_FIAP1.csv', sep=';')
 # st.write(df.head())
 
 df.columns[df.columns.str.contains('2020')]
-
 df.columns[df.columns.str.contains('2021')]
-
 df.columns[df.columns.str.contains('2022')]
 
 df[['NOME', 'INDE_2020', 'INDE_2021', 'INDE_2022']].dropna()
@@ -112,7 +110,15 @@ correlation_matrix = numerical_df.corr()
 fig, ax = plt.subplots(figsize=(8, 6))
 
 # Criar o gráfico de dispersão
-sns.scatterplot(x='INDE_2020', y='IAA_2020', data=df_2020, ax=ax)
+if from_year == 2020:
+    sns.scatterplot(x='INDE_2020', y='IAA_2020', data=df_2020, ax=ax)
+    ax.set_title('Dispersão 2020')
+elif from_year == 2021:
+    sns.scatterplot(x='INDE_2021', y='IAA_2021', data=df_2021, ax=ax)
+    ax.set_title('Dispersão 2021')
+elif from_year == 2021:
+    sns.scatterplot(x='INDE_2022', y='IAA_2022', data=df_2022, ax=ax)
+    ax.set_title('Dispersão 2022')
 
 # Configurar o título e os rótulos dos eixos
 ax.set_title('Relação entre INDE e IAA em 2020')
