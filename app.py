@@ -107,26 +107,38 @@ colunas_numericas_2022 = int_columns_2022
 numerical_df = df_2020.select_dtypes(include=['float', 'int'])
 
 correlation_matrix = numerical_df.corr()
-fig, ax = plt.subplots()
-sns.heatmap(correlation_matrix, annot=True, linewidths=0.5, ax=ax)
 
-plt.figure(figsize=(8, 6))
-sns.scatterplot(x='INDE_2020', y='IAA_2020', data=df_2020)
-plt.title('Relação entre INDE e IAA em 2020')
-plt.xlabel('INDE_2020')
-plt.ylabel('IAA_2020')
-st.pyplot(plt.subplots())
+fig, ax = plt.subplots(figsize=(8, 6))
+
+# Criar o gráfico de dispersão
+sns.scatterplot(x='INDE_2020', y='IAA_2020', data=df_2020, ax=ax)
+
+# Configurar o título e os rótulos dos eixos
+ax.set_title('Relação entre INDE e IAA em 2020')
+ax.set_xlabel('INDE_2020')
+ax.set_ylabel('IAA_2020')
+
+# Mostrar o gráfico no Streamlit
+st.pyplot(fig)
 
 # Histograma para mostrar a distribuição de uma variável numérica, por exemplo, 'INDE_2020':
+# Criar a figura e os eixos
+fig, ax = plt.subplots(figsize=(8, 6))
 
-plt.figure(figsize=(8, 6))
-sns.histplot(df_2020['INDE_2020'], kde=True)
-plt.title('Distribuição do INDE em 2020')
-plt.xlabel('INDE_2020')
-plt.ylabel('Frequência')
-st.pyplot(plt.subplots())
+# Criar o histograma com a linha de densidade
+sns.histplot(df_2020['INDE_2020'], kde=True, ax=ax)
 
-# Exibir o gráfico no Streamlit
+# Configurar o título e os rótulos dos eixos
+ax.set_title('Distribuição do INDE em 2020')
+ax.set_xlabel('INDE_2020')
+ax.set_ylabel('Frequência')
+
+# Mostrar o gráfico no Streamlit
+st.pyplot(fig)
+
+# Boxplot para mostrar a distribuição de uma variável numérica em relação a uma variável categórica, por exemplo, 'INSTITUICAO_ENSINO_ALUNO_2020':
+fig, ax = plt.subplots()
+sns.heatmap(correlation_matrix, annot=True, linewidths=0.5, ax=ax)
 st.pyplot(fig)
 
 # Modelo de classificação para o ano de 2020
