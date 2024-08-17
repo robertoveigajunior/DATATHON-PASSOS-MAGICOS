@@ -315,11 +315,11 @@ regressor_model = MLPRegressor(random_state=42)
 regressor_model.fit(X_train, y_train)
 
 # Fazer previsões no conjunto de teste
-MLPRegressor_predictions = regressor_model.predict(X_test)
+regressor_predictions = regressor_model.predict(X_test)
 
 st.markdown("## Rede Neural 2020")
-st.write("R²:", r2_score(y_test, MLPRegressor_predictions))
-st.write("RMSE:", mean_squared_error(y_test, MLPRegressor_predictions, squared=False))
+st.write("R²:", r2_score(y_test, regressor_predictions))
+st.write("RMSE:", mean_squared_error(y_test, regressor_predictions, squared=False))
 st.markdown("---")
 
 y = le.fit_transform(df_2021['INSTITUICAO_ENSINO_ALUNO_2021'])
@@ -335,8 +335,8 @@ regressor_model.fit(X_train, y_train)
 regressor_predictions = regressor_model.predict(X_test)
 
 st.markdown("## Rede Neural 2021")
-st.write("R²:", r2_score(y_test, MLPRegressor_predictions))
-st.write("RMSE:", mean_squared_error(y_test, MLPRegressor_predictions, squared=False))
+st.write("R²:", r2_score(y_test, regressor_predictions))
+st.write("RMSE:", mean_squared_error(y_test, regressor_predictions, squared=False))
 st.markdown("---")
 
 y = le.fit_transform(df_2022['ANO_INGRESSO_2022'])
