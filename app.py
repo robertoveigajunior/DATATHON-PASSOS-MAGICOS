@@ -463,16 +463,15 @@ st.markdown("A acurácia representa a proporção de previsões corretas feitas 
 # Melhor modelo de regressão para cada ano
 st.markdown("### Melhor Modelo de Regressão por Ano")
 for ano in ['2020', '2021', '2022']:
-    if from_year == ano:
-        melhor_regressao = max(
-            [(modelo, metricas[ano]) for modelo, metricas in resultados.items() if modelo != 'Classificação'],
-            key=lambda x: x[1]['R²']
-        )
-        st.markdown(f"#### Ano {ano}")
-        st.markdown(f"- **Modelo:** {melhor_regressao[0]}")
-        st.markdown(f"- **R²:** {melhor_regressao[1]['R²']:.3f}")
-        st.markdown(f"- **RMSE:** {melhor_regressao[1]['RMSE']:.3f}")
-        st.markdown("O R² indica a proporção da variabilidade dos dados explicada pelo modelo, enquanto o RMSE mede o erro médio das previsões.")
+    melhor_regressao = max(
+        [(modelo, metricas[ano]) for modelo, metricas in resultados.items() if modelo != 'Classificação'],
+        key=lambda x: x[1]['R²']
+    )
+    st.markdown(f"#### Ano {ano}")
+    st.markdown(f"- **Modelo:** {melhor_regressao[0]}")
+    st.markdown(f"- **R²:** {melhor_regressao[1]['R²']:.3f}")
+    st.markdown(f"- **RMSE:** {melhor_regressao[1]['RMSE']:.3f}")
+    st.markdown("O R² indica a proporção da variabilidade dos dados explicada pelo modelo, enquanto o RMSE mede o erro médio das previsões.")
 
 st.markdown("---")
 
