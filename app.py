@@ -167,7 +167,7 @@ elif from_year == 2021:
     df['INSTITUICAO_ENSINO_ALUNO_2021'].value_counts().plot(kind='bar', ax=ax)
     ax.set_title('Distribuição das Instituições de Ensino dos Alunos em 2021')
 elif from_year == 2022:
-    df['INSTITUICAO_ENSINO_ALUNO_2022'].value_counts().plot(kind='bar', ax=ax)
+    df['ANO_INGRESSO_2022'].value_counts().plot(kind='bar', ax=ax)
     ax.set_title('Distribuição das Instituições de Ensino dos Alunos em 2022')
 
 # Configurar o título e os rótulos dos eixos
