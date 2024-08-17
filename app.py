@@ -110,6 +110,22 @@ correlation_matrix = numerical_df.corr()
 fig, ax = plt.subplots()
 sns.heatmap(correlation_matrix, annot=True, linewidths=0.5, ax=ax)
 
+plt.figure(figsize=(8, 6))
+sns.scatterplot(x='INDE_2020', y='IAA_2020', data=df_2020)
+plt.title('Relação entre INDE e IAA em 2020')
+plt.xlabel('INDE_2020')
+plt.ylabel('IAA_2020')
+st.pyplot(plt.subplots())
+
+# Histograma para mostrar a distribuição de uma variável numérica, por exemplo, 'INDE_2020':
+
+plt.figure(figsize=(8, 6))
+sns.histplot(df_2020['INDE_2020'], kde=True)
+plt.title('Distribuição do INDE em 2020')
+plt.xlabel('INDE_2020')
+plt.ylabel('Frequência')
+st.pyplot(plt.subplots())
+
 # Exibir o gráfico no Streamlit
 st.pyplot(fig)
 
