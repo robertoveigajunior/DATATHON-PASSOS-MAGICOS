@@ -117,7 +117,11 @@ colunas_numericas_2022 = int_columns_2022
 numerical_df = df_2020.select_dtypes(include=['float', 'int'])
 
 correlation_matrix = numerical_df.corr()
-# st.plot(sns.heatmap(correlation_matrix, annot=True, linewidth=.5))
+fig, ax = plt.subplots()
+sns.heatmap(correlation_matrix, annot=True, linewidths=0.5, ax=ax)
+
+# Exibir o gráfico no Streamlit
+st.pyplot(fig)
 
 # Modelo de classificação para o ano de 2020
 le = LabelEncoder()
