@@ -25,7 +25,6 @@ st.set_page_config(
     page_title='Projeto de Análise Preditiva da ONG Passos Mágicos',
     page_icon=':earth_americas:', # This is an emoji shortcode. Could be a URL too.
 )
-# st.title('Projeto de Análise Preditiva da ONG "Passos Mágicos"')
 
 # Descrição do projeto
 '''
@@ -33,15 +32,9 @@ st.set_page_config(
 O projeto visa desenvolver um modelo preditivo para avaliar o impacto da ONG "Passos Mágicos" no desenvolvimento educacional de crianças e jovens em situação de vulnerabilidade. Utilizando dados de 2020 a 2023, o objetivo é identificar estudantes em risco de dificuldades de aprendizado e otimizar a alocação de recursos da ONG. O projeto culmina em um dashboard interativo que permite à equipe da ONG visualizar insights e previsões em tempo real.
 '''
 
-MIN_YEAR = 2020
-MAX_YEAR = 2023
-
-# Slider para selecionar o ano de interesse
-from_year = st.slider('Selecione o ano de interesse:', min_value=MIN_YEAR, max_value=MAX_YEAR, value=MIN_YEAR)
-
 df = pd.read_csv(r'./PEDE_PASSOS_DATASET_FIAP1.csv', sep=';')
 
-st.write(df.head())
+# st.write(df.head())
 
 df.columns[df.columns.str.contains('2020')]
 
