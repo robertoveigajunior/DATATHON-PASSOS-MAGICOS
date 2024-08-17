@@ -191,8 +191,8 @@ linear_predictions = linear_model.predict(X_test)
 from sklearn.metrics import mean_squared_error, r2_score
 
 st.markdown("## Regressão Linear 2020")
-st.markdown("### R²:", r2_score(y_test, linear_predictions))
-st.markdown("### RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
+st.write("R²:", r2_score(y_test, linear_predictions))
+st.write("RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
 st.markdown("---")
 
 # Montar a regressao linear para o ano 2020
@@ -214,8 +214,8 @@ linear_predictions = linear_model.predict(X_test)
 from sklearn.metrics import mean_squared_error, r2_score
 
 st.markdown("## Regressão Linear 2021")
-st.markdown("### R²:", r2_score(y_test, linear_predictions))
-st.markdown("### RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
+st.write("R²:", r2_score(y_test, linear_predictions))
+st.write("RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
 st.markdown("---")
 
 # Montar a regressao linear para o ano 2020
@@ -237,8 +237,8 @@ linear_predictions = linear_model.predict(X_test)
 from sklearn.metrics import mean_squared_error, r2_score
 
 st.markdown("## Regressão Linear 2022")
-st.markdown("### R²:", r2_score(y_test, linear_predictions))
-st.markdown("### RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
+st.write("R²:", r2_score(y_test, linear_predictions))
+st.write("RMSE:", mean_squared_error(y_test, linear_predictions, squared=False))
 st.markdown("---")
 
 """Modelo de Arvore de decisão"""
@@ -259,8 +259,8 @@ tree_model.fit(X_train, y_train)
 tree_predictions = tree_model.predict(X_test)
 
 st.markdown("## Árvore de Decisão 2020")
-st.markdown("### R²:", r2_score(y_test, tree_predictions))
-st.markdown("### RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
+st.write("R²:", r2_score(y_test, tree_predictions))
+st.write("RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
 st.markdown("---")
 
 # Montar modelo de arvore de decisão
@@ -279,8 +279,8 @@ tree_model.fit(X_train, y_train)
 tree_predictions = tree_model.predict(X_test)
 
 st.markdown("## Árvore de Decisão 2021")
-st.markdown("### R²:", r2_score(y_test, tree_predictions))
-st.markdown("### RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
+st.write("R²:", r2_score(y_test, tree_predictions))
+st.write("RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
 st.markdown("---")
 
 # Montar modelo de arvore de decisão
@@ -299,8 +299,8 @@ tree_model.fit(X_train, y_train)
 tree_predictions = tree_model.predict(X_test)
 
 st.markdown("## Árvore de Decisão 2022")
-st.markdown("### R²:", r2_score(y_test, tree_predictions))
-st.markdown("### RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
+st.write("R²:", r2_score(y_test, tree_predictions))
+st.write("RMSE:", mean_squared_error(y_test, tree_predictions, squared=False))
 st.markdown("---")
 
 """Rede Neural"""
@@ -320,8 +320,8 @@ regressor_model.fit(X_train, y_train)
 MLPRegressor_predictions = regressor_model.predict(X_test)
 
 st.markdown("## Rede Neural 2020")
-st.markdown("### R²:", r2_score(y_test, MLPRegressor_predictions))
-st.markdown("### RMSE:", mean_squared_error(y_test, MLPRegressor_predictions, squared=False))
+st.write("R²:", r2_score(y_test, MLPRegressor_predictions))
+st.write("RMSE:", mean_squared_error(y_test, MLPRegressor_predictions, squared=False))
 st.markdown("---")
 
 # Montar modelo de rede neural para o ano de 2020
@@ -339,8 +339,8 @@ regressor_model.fit(X_train, y_train)
 regressor_predictions = regressor_model.predict(X_test)
 
 st.markdown("## Rede Neural 2021")
-st.markdown("### R²:", r2_score(y_test, MLPRegressor_predictions))
-st.markdown("### RMSE:", mean_squared_error(y_test, MLPRegressor_predictions, squared=False))
+st.write("R²:", r2_score(y_test, MLPRegressor_predictions))
+st.write("RMSE:", mean_squared_error(y_test, MLPRegressor_predictions, squared=False))
 st.markdown("---")
 
 # Montar modelo de rede neural para o ano de 2020
@@ -358,8 +358,8 @@ regressor_model.fit(X_train, y_train)
 regressor_predictions = regressor_model.predict(X_test)
 
 st.markdown("## Rede Neural 2022")
-st.markdown("### R²:", r2_score(y_test, regressor_predictions))
-st.markdown("### RMSE:", mean_squared_error(y_test, regressor_predictions, squared=False))
+st.write("R²:", r2_score(y_test, regressor_predictions))
+st.write("RMSE:", mean_squared_error(y_test, regressor_predictions, squared=False))
 st.markdown("---")
 
 
